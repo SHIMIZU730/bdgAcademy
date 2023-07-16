@@ -1,0 +1,12 @@
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml
+
+__pycache__
+*.pyc
+*.log
+/devproject/devproject/logs/*
+/devproject/media/*
+/devproject/devproject/requirementstxt_bk/*
+.elasticbeanstalk/*

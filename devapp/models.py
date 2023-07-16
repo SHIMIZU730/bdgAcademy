@@ -1,0 +1,20 @@
+from django.db import models
+
+class chatgpt_answer_log(models.Model):
+    answer_1 = models.CharField(max_length=254)
+    answer_2 = models.CharField(max_length=254)
+    answer_3 = models.CharField(max_length=254)
+    answer_4 = models.CharField(max_length=254)
+    answer_5 = models.CharField(max_length=254)
+    answer_6 = models.CharField(max_length=254)
+    answer_7 = models.CharField(max_length=254)
+    answer_8 = models.CharField(max_length=254)
+    answer_9 = models.CharField(max_length=254)
+    answer_10 = models.CharField(max_length=254)
+    answer_11 = models.CharField(max_length=254)
+    answer_12 = models.CharField(max_length=254)
+    answer_13 = models.CharField(max_length=254)
+    answer_14 = models.CharField(max_length=254)
+    answer_15 = models.CharField(max_length=254)
+    create_user = models.CharField(max_length=254)
+    create_date = models.DateTimeField()

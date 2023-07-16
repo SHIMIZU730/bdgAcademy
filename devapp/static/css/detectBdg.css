@@ -1,0 +1,295 @@
+/*staticファイルのパスがcssファイルで記載しても反映されない場合のみhtmlファイルに直書き/
+
+/*共通 その他 始まり*/
+body, html {
+    margin: 0;
+    padding: 0;
+}
+body {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.container {
+    padding: 0;  
+}
+/*input Type="file"はデザイン修正のため非表示にする 始まり*/
+input[type="file"] {
+  display: none;
+}
+.lblInputFile {
+  padding: 10px 60px;
+  margin-bottom: 20px;
+  color: black;
+  background-color: #ffffff;
+  cursor: pointer;
+  border-radius: 30px;
+}
+/*input Type="file"はデザイン修正のため非表示にする 終わり*/
+h2 {
+  color: #333;
+  font-weight: 700;
+}
+p {
+  color: #666;
+  font-weight: 700;
+}
+.align-center {
+  text-align: center;
+}
+.main-title {
+  padding:10px 10px 10px 0;
+  font-family: 'DotGothic16', sans-serif;
+}
+.area-title {
+  padding:10px 0 0px 0;
+  font-family: 'DotGothic16', sans-serif;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+.warningInfoArea {
+  margin-top: 20px;
+  margin-bottom: 60px;
+  font-size: 12px;
+  display: flex;
+  justify-content: center;
+  text-align: left;
+}
+.warningInfoArea p {
+  margin: 0;
+}
+.outer-catchArea {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.text-chatgpt{
+  margin-top: 20px;
+  font-weight: 200;
+  font-size: 12px;
+  font-family: 'Meiryo', 'メイリオ', sans-serif;
+}
+
+.camera-area-warning-text {
+  font-weight: 200;
+  font-size: 12px;
+}
+.catchArea {
+  display: flex;
+  flex-direction: column;
+}
+/*共通 その他 終わり*/
+
+/*メイン画像 始まり*/
+.image-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+.image-container img {
+    width: 100%;
+    height: auto;
+}
+
+.image-container img.search-view {
+    max-width: 400px;
+}
+
+.image-container img.result-view {
+    max-width: 200px;
+}
+/*画像が読み込まれるまで非表示にします*/
+.image-container img.lazyload {
+    opacity: 0;
+}
+
+/*画像の読み込みが完了したら表示します*/
+.image-container img.lazyload.loaded {
+    opacity: 1;
+    transition: opacity 0.5s;
+}
+/*メイン画像 終わり*/
+
+/*検索フォーム 始まり*/
+#textArea {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.search-box {
+  display: flex;
+  justify-content: center;
+  width: 300px;
+  border: 1px solid black;
+  box-shadow: 0 0 0 5px white;
+  border-radius: 30px;   /* 変更時は、子のradiusも変更 */
+  overflow: hidden; /* はみ出した部分を非表示にする */
+}
+@media screen and (max-width: 600px) {
+
+}
+.search-input {
+  padding: 5px;
+  outline: none;
+  position: relative;
+  flex-grow: 1;
+  border: none;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+}
+.search-button {
+  padding:5px;
+  background: #FFFFFF;
+  cursor: pointer;
+  outline: none;
+  position: relative;
+  box-sizing: border-box;
+  color: black;
+  border: none;
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
+}
+/*検索フォーム 終わり*/
+
+/*アイコンの設定 始まり*/
+.icon-size {
+  /*元のアイコンサイズの何倍かを設定する、2emは2倍*/
+}
+/* ラジオボタンを非表示にする */
+.btn-group-toggle input {
+    display: none;
+}
+/* 非選択状態の色 */
+.btn-secondary {
+    color: gray;
+    background-color: white;
+}
+/* 選択状態の色 */
+.btn-secondary.active {
+    color: white;
+    background-color: black;
+}
+.btnSwitchArea {
+  margin-top: 30px;
+}
+.switchIconArea {
+  box-shadow: 0 0 0 2px white;
+  border-radius: 0px;   /* 変更時は、子のradiusも変更 */
+}
+.lblBtnSwitchLeft {
+  width: 50px;
+  border-top-left-radius: 0px; /*bootstrapのbtnクラスがradiusデフォルトのため*/
+  border-bottom-left-radius: 0px;
+}
+.lblBtnSwitchRight {
+  width: 50px;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+
+/*アイコンの設定 終わり*/
+
+/*キャッチコピーエリア 始まり*/
+.catch-copy-area {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: 'DotGothic16', sans-serif;
+}
+.catchTextGroup1 {
+ font-size: 20px;
+ width: 100%;
+ margin-bottom: 10px;
+}
+.catchTextGroup2 {
+ font-size: 30px; 
+ width: 100%;
+ margin-bottom: 10px;
+}
+/*キャッチコピーエリア 終わり*/
+
+/*result area 始まり*/
+.resultUrl {
+  color: #0066cc;
+  text-decoration: none;
+}
+.resultUrl:hover {
+  text-decoration: underline;
+}
+.result-card {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 30px;
+  margin-top: 30px;
+  background-color: #ffffff;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: 'DotGothic16', sans-serif;
+}
+.result-detail {
+  padding: 10px 3% 0px 3%;
+}
+.display-image {
+  max-height: 500px;  /* ここで任意の最大高さを設定 */
+  object-fit: contain;  /* 画像のアスペクト比を保つ */
+  margin-top: 10px;
+}
+.result-question {
+  font-weight: 700;
+  line-height: 1.2;
+  font-size: 18px;
+  margin-bottom: 2px;
+}
+.result-answer {
+  padding-left: 16px;
+  font-weight: 400;
+  font-size: 16px;
+}
+a.resultUrl p.result-answer {
+  color: #0066c0;
+}
+/*result area 終わり*/
+
+/* スマホ画面の場合 */
+@media (max-width: 600px) { /* 一般的にスマートフォンの横幅は600px以下とされています */
+    /*キャッチコピーエリア 始まり*/
+    .catchTextGroup1 {
+        font-size: 14px;
+    }
+    .catchTextGroup2 {
+        font-size: 22px;
+        display: block;
+    }
+    .catchText3 {
+      letter-spacing: 0.2em;
+    }
+    /*キャッチコピーエリア 終わり*/
+    
+     /*検索フォーム 始まり*/
+    .search-box {
+      width: 60%; /* for mobile screens */
+    }
+    /*検索フォーム 終わり*/
+
+    .display-image {
+      max-height: 200px;  /* ここで任意の最大高さを設定 */
+      object-fit: contain;  /* 画像のアスペクト比を保つ */
+      margin-top: 10px;
+    }
+    
+    .image-container img.search-view {
+        max-width: 200px;
+    }
+  
+    .image-container img.result-view {
+        max-width: 100px;
+    }
+}
+
+
+  

@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block title %}ログイン{% endblock %}
+
+{% block content %}
+  <h2 class="my-4">Login</h2>
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-primary">Login</button>
+  </form>
+  <p class="mt-2">Don't have an account? <a href="{% url 'accounts:signup' %}">Sign up</a></p>
+  <p class="mt-2"><a href="{% url 'accounts:password_reset' %}">Forgot password?</a></p>
+{% endblock %}

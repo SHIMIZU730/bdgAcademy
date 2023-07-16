@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %}500エラー |ボードゲームアカデミー{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="my-div-style w-100">
+            <h1>想定外のエラーが発生しました。(500エラー)</h1>
+        </div>
+        <a href="{% url 'devapp:index' %}">トップページに戻る</a>
+    </div>
+</div>
+{% endblock %}

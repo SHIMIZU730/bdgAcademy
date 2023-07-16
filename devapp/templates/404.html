@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %}404エラー |ボードゲームアカデミー{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="my-div-style w-100">
+            <h1>ページが見つかりませんでした。(404エラー)</h1>
+        </div>
+        <a href="{% url 'devapp:index' %}">トップページに戻る</a>
+    </div>
+</div>
+{% endblock %}

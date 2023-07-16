@@ -1,0 +1,46 @@
+#header {
+    display: none;
+}
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 40%;
+  left: 50%; /* Move the element's left edge to the center of the page */
+  transform: translateX(-50%); /* Shift the element to the left by half its width */
+  text-align: center;
+  z-index: 2; 
+}
+.title-text {
+    font-size: 3em;
+    font-weight: bold;
+    color: white;
+    font-family: 'DotGothic16', sans-serif;
+}
+
+@media (max-width: 600px) {
+    .title-text {
+        font-size: 2em;
+    }
+}
+
+.start-button {
+  color: white; /* Text color */
+  border: solid 0.2px white; /* No border */
+  padding: 15px 32px; /* Padding around text */
+  text-align: center; /* Center the text */
+  text-decoration: none; /* No underline */
+  display: inline-block;
+  font-size: 22px;
+  margin: 4px 2px;
+  cursor: pointer; /* Hand cursor on hover */
+  border-radius: 12px; /* Rounded corners */
+  transition: background-color 0.3s; /* Transition effect */
+}
+.start-button:hover {
+  background-color: #e5fff2; /* Orangered color on hover */
+  opacity: 0.3;
+  color: black;
+}
