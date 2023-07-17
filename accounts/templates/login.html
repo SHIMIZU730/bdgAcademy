@@ -3,6 +3,7 @@
 {% block title %}ログイン{% endblock %}
 
 {% block content %}
+<div class="container">
   <h2 class="my-4">Login</h2>
   <form method="post">
     {% csrf_token %}
@@ -11,4 +12,14 @@
   </form>
   <p class="mt-2">Don't have an account? <a href="{% url 'accounts:signup' %}">Sign up</a></p>
   <p class="mt-2"><a href="{% url 'accounts:password_reset' %}">Forgot password?</a></p>
+</div>
+{% endblock %}
+
+{% block javascript %}
+<script>
+  $(document).ready(function() {
+      // CSSがすべて読み込まれたと仮定してbodyに'loaded'クラスを追加
+      $('body.lazyload').addClass('loaded');
+  });
+</script>
 {% endblock %}

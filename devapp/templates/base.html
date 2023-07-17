@@ -14,21 +14,15 @@
       <link rel="stylesheet" href="{% static 'css/loading.css' %}"/>
       {% block css %}
       {% endblock %}
-      <!--3D画像用-->
       <script src="{% static 'js/three.min.js' %}"></script>
-      <!-- ga.htmlファイルの読み込み-->
       {% if GOOGLE_ANALYTICS_TRACKING_ID %}
         {% include 'ga.html' %}          
       {% endif %}
     </head>
     <body class="lazyload">
-      <!--コメントコピー用-->
-      {% comment %}
-      {% endcomment%}
       <header id="header">
           <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
               <div class="container">
-                  <a class="navbar-brand" href="{% url 'devapp:index' %}">ボードゲームアカデミー</a>
                 {% comment %}
                 <!--<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">-->
                 <!--  <span class="navbar-toggler-icon"></span>-->
@@ -48,7 +42,20 @@
           </nav>
       </header>
       
-      <!-- 画面メッセージ表示-->
+      {% comment %}
+      <!--<div class="header">-->
+      <!--  <button id="menuButton" class="menuButton">-->
+      <!--    <div class="menuLine"></div>-->
+      <!--    <div class="menuLine"></div>-->
+      <!--    <div class="menuLine"></div>-->
+      <!--  </button>-->
+      <!--</div>-->
+      <!--<div id="sideMenu" class="sideMenu">-->
+      <!--  <a class="nav-link" href="{% url 'accounts:login' %}">Login</a>-->
+      <!--  <a class="nav-link" href="{% url 'accounts:signup' %}">Sign up</a>-->
+      <!--</div>-->
+      {% endcomment%}
+      
       {% if messages %}
       <div class="container">
           <div class="row">
@@ -62,13 +69,6 @@
           </div>
       </div>
       {% endif %}
-      
-      <!--ローディング画面の表示-->
-      {% comment %}
-      <!--<div id="loading" style="display: none;">-->
-      <!--    <div class="loading-text">ChatGPTに質問中<span class="dots">...</span></div>-->
-      <!--</div>-->
-      {% endcomment%}
       
       {% include 'loading.html' %}   
       

@@ -6,7 +6,10 @@
 __pycache__
 *.pyc
 *.log
-/devproject/devproject/logs/*
-/devproject/media/*
-/devproject/devproject/requirementstxt_bk/*
+*.jpeg
+*.jpg
+*.png
+/devproject_devenv/devproject/logs/*
+/devproject_devenv/media/*
+/devproject_devenv/devproject/requirementstxt_bk/*
 .elasticbeanstalk/*

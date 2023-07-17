@@ -1,9 +1,5 @@
 $(document).ready(function() {
     
-    // $(window).on('load', function() {
-        
-    // });
-    // 初期処理
     var initialize = function() {
         // 初期表示でローディングを消しておく
         $('#loading').css('display','none');
@@ -12,6 +8,5 @@ $(document).ready(function() {
         $('body.lazyload').addClass('loaded');
     };
     
-    // 初期処理
     initialize();
 });

@@ -10,3 +10,12 @@
     <button type="submit" class="btn btn-primary">Sign up</button>
   </form>
 {% endblock %}
+
+{% block javascript %}
+<script>
+  $(document).ready(function() {
+      // CSSがすべて読み込まれたと仮定してbodyに'loaded'クラスを追加
+      $('body.lazyload').addClass('loaded');
+  });
+</script>
+{% endblock %}

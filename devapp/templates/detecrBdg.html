@@ -8,7 +8,9 @@
 
 {% block content %}
 <style type="text/css">
-
+.result-card {
+  background-image: url("{% static 'images/background-ue.png' %}");
+}
 </style>
 
 <div class="container">
@@ -34,7 +36,7 @@
           </div>
       {% elif gptResultList %}
           <div class="result-card">
-              <h2 class="align-center">ChatGPTの答え</h2>
+              <h2 class="result-title align-center">ChatGPTの答え</h2>
               <div class="result-detail">
                 <p class="result-question">1.ボードゲーム名</p>
                 <p class="result-answer">{{ gptResultList.0 }}</p>
@@ -45,6 +47,9 @@
                 <a href="https://www.google.com/search?q={{ gptResultList.3 }} ボードゲーム" target="_blank" class="resultUrl"><p class="result-answer">{{ gptResultList.3 }}</p></a>
                 <a href="https://www.google.com/search?q={{ gptResultList.4 }} ボードゲーム" target="_blank" class="resultUrl"><p class="result-answer">{{ gptResultList.4 }}</p></a>
                 <p class="text-chatgpt">powered by ChatGPT</p>
+                <a class="back-btn" href="{% url 'devapp:detectBdg' %}">
+                  <i class="fa-solid fa-caret-left"></i> 戻る
+                </a>
               </div>
           </div>
           <div class="warningInfoArea">
@@ -67,8 +72,6 @@
         <input type="submit" name="searchBdg" id="searchBdg" value="カメラ起動" hidden="hidden">
         <p class="camera-area-warning-text">※画像からボードゲームの名前が読み取れない場合失敗します</p>
       </div>
-      
-      <!--ペン、カメラアイコンボタン部分-->
       <div class="d-flex justify-content-center btnSwitchArea">
         <div class="btn-group btn-group-toggle mx-auto switchIconArea" data-toggle="buttons">
           <label class="btn btn-secondary active lblBtnSwitchLeft">
@@ -108,7 +111,7 @@ window.onload = function() {
     var bodyElement = document.getElementsByTagName('body')[0];
     var imageElement = document.querySelector('.image-container img.lazyload');
     
-    // 検索画面と結果画面
+    // 検索画面と結果画面で背景画像を切替
     if (resultCardExists) {
         bodyElement.style.backgroundImage = 'url("{% static bg_result %}")';
         imageElement.classList.add('result-view');
@@ -117,7 +120,7 @@ window.onload = function() {
         imageElement.classList.add('search-view');
     }
     
-    // ブラウザが画像を読み込んで表示するまでにCSSが適用されるタイミングが遅れる防止
+    // CSS適用後画面表示
     if(imageElement.complete) {
         imageElement.classList.add('loaded');
     } else {

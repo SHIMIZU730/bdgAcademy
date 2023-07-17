@@ -1,52 +1,42 @@
 /*GoogleFontのimport*/
 @import url('https://fonts.googleapis.com/css2?family=DotGothic16&display=swap');
 
- /*ヘッダー全体 */
-/*header {*/
-/*  display: flex;*/
-/*  justify-content: space-between;*/
-/*  align-items: center;*/
-/*  background-color: #333;*/
-/*  padding: 10px 20px;*/
-/*  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);*/
-/*  font-family: 'Arial', sans-serif;*/
-/*}*/
- /*ロゴ部分 */
-/*header .logo {*/
-/*  font-size: 24px;*/
-/*  font-weight: bold;*/
-/*  color: #ffffff;*/
-/*  text-decoration: none;*/
-/*}*/
- /*ナビゲーションメニュー */
-/*header nav {*/
-/*  display: flex;*/
-/*  align-items: center;*/
-/*}*/
-/*header nav ul {*/
-/*  display: flex;*/
-/*  list-style-type: none;*/
-/*  margin: 0;*/
-/*  padding: 0;*/
-/*  gap: 15px;*/
-/*}*/
-/*header nav ul li {*/
-/*  padding: 5px 10px;*/
-/*}*/
-/*header nav ul li a {*/
-/*  color: #ffffff;*/
-/*  text-decoration: none;*/
-/*  transition: color 0.3s;*/
-/*}*/
-/*header nav ul li a:hover {*/
-/*  color: #cccccc;*/
-/*}*/
 #header {
     display: none;
 }
+/*ヘッダー部分*/
+.header {
+  background-color: transparent;
+  position: relative;
+}
+.menuButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.menuLine {
+  width: 35px;
+  height: 5px;
+  background-color: white;
+  margin: 6px 0;
+}
+.sideMenu {
+  background-color: white;
+  height: 100%;
+  width: 0;
+  position: fixed;
+  top: 0;
+  right: 0;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
  /*その他の独自スタイルをここに追加 */
  
-/*全体のレイアウトを定義 始まり*/
+/*全体のレイアウトを定義*/
 * {
     margin: 0;
     padding: 0;
@@ -57,13 +47,10 @@ body {
     color: #333;
     line-height: 1.6;
     background-color: #ffffff;
-;
 }
 a {
     color: #333;
 }
-/*全体のレイアウトを定義 終わり*/
-
 /*CSS読み込み完了対応用*/
 body.lazyload {
     opacity: 0;
@@ -72,4 +59,3 @@ body.lazyload {
 body.loaded {
     opacity: 1;
 }
-/*CSS読み込み完了対応用*/

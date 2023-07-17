@@ -2,7 +2,7 @@
 
 $(document).ready(function() {
   
-  // ブラウザが画像を読み込んで表示するまでにCSSが適用されるタイミングが遅れてしまう現象の防止
+  // CSS適用後表示
   $('img.lazyload').each(function() {
       if(this.complete) {
           $(this).addClass('loaded');
@@ -13,12 +13,12 @@ $(document).ready(function() {
       }
   });
 
-  // ブラウザの戻るをクリック時(iPhone以外用)
+  // 戻るクリック時(iPhone以外用)
   window.addEventListener('popstate', function(event) {
       $('#loading').css('display', 'none');
   });
   
-  // ブラウザの戻るをクリック時(iPhone用)
+  // 戻るクリック時(iPhone用)
   window.addEventListener("pageshow", function(event){
     if (event.persisted) {
       // ここにキャッシュ有効時の処理を書く
@@ -26,13 +26,12 @@ $(document).ready(function() {
     }
   });
 
-  //検索ボタンクリックで、chatgpt起動する
   $("#searchBdgByText").on("click", function() {
     if($('#inputText').val() == "") {
       alert('ボードゲームを入力してください。');
       return;
     } else {
-      // ローディング画面表示
+      
       $('#loading').css('display','flex');
       
       var span2 = document.querySelector('.loader span:nth-child(2)');
@@ -51,13 +50,12 @@ $(document).ready(function() {
     }
   });
   
-  
-  //カメラ・テキスト選択によるactiveクラス切替
+  //カメラ・テキスト選択による切替
   $('.btn-group-toggle label').on('click', function(){
     $(this).addClass('active').siblings().removeClass('active');
   });
   
-  //カメラ・テキスト選択による表示切替
+  //カメラ・テキスト選択による切替
   $('input[name="formChoice"]').change(function(){
     if($(this).is(':checked')) {
       if($(this).attr('id') === 'imageIcon') {
@@ -68,20 +66,19 @@ $(document).ready(function() {
     }
   });
   
-  // 画像アイコンを選択時
+  // 画像アイコン選択時
   var selectImage = function() {
     $('#textArea').hide();
     $('#imageArea').show();
     
-    // カメラ部分タグ生成(iOSカメラ緑ランプの対応)
     createCameraBtnTags();
   };
-  // テキストアイコンを選択時
+  
+  // テキストアイコン選択時
   var selectText = function() {
     $('#imageArea').hide();
     $('#textArea').show();
     
-    // カメラ部分タグ削除(iOSカメラ緑ランプの対応)
     removeCameraBtnTags();
   };
   
@@ -105,32 +102,28 @@ $(document).ready(function() {
       .append("カメラ起動")
       .prependTo("#cameraBtnPosision");
     
-    //画像がセットされたら、chatgpt起動する
     $("#inputImg").on("change", function(e) {
-      //ファイル名を表示
+
       var file = $(this).prop('files')[0];
       
       $('.pTagInputFile').text(file.name);
-      // ローディング画面表示
+      
       $('#loading').css('display','flex');
       
-      // ChatGPTを起動
+      // ChatGPT起動
       $("#searchBdg").click();
     });
   }
-   // カメラ部分タグ削除(iOSカメラ緑ランプの対応)
+   // カメラ部タグ削除(iOSカメラ緑ランプ対応)
   var removeCameraBtnTags = function() {
     $("#lblInputFileId").remove();
     $("#inputImg").remove();
   }
   
-  // 初期処理
   var initialize = function() {
     
-    // テキストアイコンを選択
     selectText();
       
-    // 初期表示でローディングを消しておく
     $('#loading').css('display','none');
     
     // CSSがすべて読み込まれたと仮定してbodyに'loaded'クラスを追加

@@ -63,14 +63,13 @@ p {
   justify-content: center;
   width: 100%;
 }
-
 .text-chatgpt{
   margin-top: 20px;
+  margin-bottom:10px;
   font-weight: 200;
   font-size: 12px;
   font-family: 'Meiryo', 'メイリオ', sans-serif;
 }
-
 .camera-area-warning-text {
   font-weight: 200;
   font-size: 12px;
@@ -91,11 +90,9 @@ p {
     width: 100%;
     height: auto;
 }
-
 .image-container img.search-view {
     max-width: 400px;
 }
-
 .image-container img.result-view {
     max-width: 200px;
 }
@@ -103,7 +100,6 @@ p {
 .image-container img.lazyload {
     opacity: 0;
 }
-
 /*画像の読み込みが完了したら表示します*/
 .image-container img.lazyload.loaded {
     opacity: 1;
@@ -124,10 +120,7 @@ p {
   border: 1px solid black;
   box-shadow: 0 0 0 5px white;
   border-radius: 30px;   /* 変更時は、子のradiusも変更 */
-  overflow: hidden; /* はみ出した部分を非表示にする */
-}
-@media screen and (max-width: 600px) {
-
+  overflow: hidden; /* はみ出した部分を非表示に */
 }
 .search-input {
   padding: 5px;
@@ -147,6 +140,7 @@ p {
   box-sizing: border-box;
   color: black;
   border: none;
+  border-left: 1px solid black;
   border-top-right-radius: 30px;
   border-bottom-right-radius: 30px;
 }
@@ -160,12 +154,10 @@ p {
 .btn-group-toggle input {
     display: none;
 }
-/* 非選択状態の色 */
 .btn-secondary {
     color: gray;
     background-color: white;
 }
-/* 選択状態の色 */
 .btn-secondary.active {
     color: white;
     background-color: black;
@@ -187,7 +179,6 @@ p {
   border-top-right-radius: 0px;
   border-bottom-right-radius: 0px;
 }
-
 /*アイコンの設定 終わり*/
 
 /*キャッチコピーエリア 始まり*/
@@ -220,19 +211,21 @@ p {
   text-decoration: underline;
 }
 .result-card {
-  border: 1px solid #ddd;
-  border-radius: 10px;
   padding: 20px;
   margin-bottom: 30px;
   margin-top: 30px;
-  background-color: #ffffff;
+  background-size: 100% 100%;
+  background-position: center center;
   width: 80%;
   margin-left: auto;
   margin-right: auto;
   font-family: 'DotGothic16', sans-serif;
 }
+.result-title {
+  padding-top: 18px;
+}
 .result-detail {
-  padding: 10px 3% 0px 3%;
+  padding: 10px 3% 20px 3%;
 }
 .display-image {
   max-height: 500px;  /* ここで任意の最大高さを設定 */
@@ -252,6 +245,25 @@ p {
 }
 a.resultUrl p.result-answer {
   color: #0066c0;
+}
+.back-btn {
+    background-color: transparent;
+    /*border: 1px solid #ccc;*/
+    /*border-radius: 20px;*/
+    padding: 3px 10px;
+    font-family: 'DotGothic16', sans-serif;
+    color: black;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    text-decoration: none;
+}
+.back-btn:hover {
+    color: black;
+    text-decoration: none;
+}
+.back-btn i {
+    color: black;
 }
 /*result area 終わり*/
 
@@ -275,17 +287,15 @@ a.resultUrl p.result-answer {
       width: 60%; /* for mobile screens */
     }
     /*検索フォーム 終わり*/
-
+    
     .display-image {
       max-height: 200px;  /* ここで任意の最大高さを設定 */
       object-fit: contain;  /* 画像のアスペクト比を保つ */
       margin-top: 10px;
     }
-    
     .image-container img.search-view {
         max-width: 200px;
     }
-  
     .image-container img.result-view {
         max-width: 100px;
     }
